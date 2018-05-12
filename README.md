@@ -20,7 +20,7 @@ What other research has been done in this area? Make sure to include 3+ links to
 
 
 What is the dataset you'll be working with?  Please include background on who collected the data, where you accessed it, and any additional information we should know about how this data came to be. 
-> Since our research question is cross sectional, we will be using datasets from both the health as well as community and environment sectors to answer the question. Based on our initial search, we found three datasets that will help us analyze the impact of built environments on mental health. These have been listed below:
+> Since our research question is cross sectional, we will be using datasets from both the health as well as community and environment sectors to answer the question. Based on our initial search, we found the following datasets that will help us analyze the impact of built environments on mental health. These have been listed below:
 1. American Household Survey (By Metropolitan Region)
 2. National Mental Health Services Survey (NMHSS)
 3. 500 Cities Health Statistics Data
