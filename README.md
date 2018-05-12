@@ -21,7 +21,7 @@ What other research has been done in this area? Make sure to include 3+ links to
 
 
 What is the dataset you'll be working with?  Please include background on who collected the data, where you accessed it, and any additional information we should know about how this data came to be. 
-> Since our research question is cross sectional, we will be using datasets from health, community and environment sectors to answer them. Based on our initial search, we found three datasets that will help us analyze the impact of built environments on mental health. These have been listed below:
+> Since our research question is cross sectional, we will be using datasets from health, community and environment sectors to answer them. Based on our initial search, we found the following datasets that will help us analyze the impact of built environments on mental health. These have been listed below:
 
   1. **American Household Survey (By Metropolitan Region)** - The AHS is sponsored by the Department of Housing and Urban          Development (HUD) and conducted by the U.S. Census Bureau. The survey is the most comprehensive national housing survey       in the United States. The dataset includes each of 47 selected Metropolitan Areas that are collected about every 4 years,      with an average of 12 areas included each year. We acceseed the dataset from the website                                      https://www.census.gov/programs-surveys/ahs/ which is downloadable in SAS and ASCII formats.
   
