@@ -1,5 +1,5 @@
 # Population Health Informatics Final Project
-## Team Members: Ishan Saksena, Jayashree Raman, Naga Soundari Balamurugan, Zubin Chopra
+#### Team Members: Ishan Saksena, Jayashree Raman, Naga Soundari Balamurugan, Zubin Chopra
 ## Project Description
 
 What is the purpose of your research project?
@@ -13,11 +13,11 @@ What other research has been done in this area? Make sure to include 3+ links to
 >This paper analyzes the effect of different urban features such as transportation, access to services, pollution, waste management, traffic, etc. on the mental health of the citizens of Turin, a city in Italy. It analyzes the distribution of different built environment factors in Turin, and then correlates it with the mental health, assessing their impact of different demographic sets of people.
 
 
-2. The impact of the physical and urban environment on mental well-being. Guite, H.; Clark, C.; Ackrill, G. 
->This paper affirms an association between the physical environment and mental well-being across a range of domains, during a study conducted in Greenwich
+2. The impact of the physical and urban environment on mental well-being. Guite, HF., Clark, C., Ackrill, G., Public Health. 2006 Dec;120(12):1117-26. Epub 2006 Nov 9. 
+>This paper affirms an association between the physical environment and mental well-being across a range of domains(neighbour noise, sense of over-crowding in the home and escape facilities such as green spaces and community facilities, and fear of crime), during a study conducted in four areas of Greenwich and London. This study also emphasizes the necessity to intervene on both design and social features of residential areas to promote mental well-being. 
 
-3. Sorting Out the Connections Between the Built Environment and Health: A Conceptual Framework for Navigating Pathways and Planning Healthy Cities
->This paper emphasizes the importance of integration public health in the early stages of urban design and development. It also analyzes the shortcomings of existing methods of data collection in this realm.
+3. Sorting Out the Connections Between the Built Environment and Health: A Conceptual Framework for Navigating Pathways and Planning Healthy Cities. Northridge. ME1., Sclar, ED., Biswas, P., J Urban Health. 2003 Dec;80(4):556-68.
+>This paper highlights the importance of integration of public health in the early stages of urban design and development. It also analyzes the shortcomings of existing methods of data collection in this realm. The paper also make a point of key challenges to be give importance for a sound scientific research to be conducted on relationship between the built environment and health.
 
 
 What is the dataset you'll be working with?  Please include background on who collected the data, where you accessed it, and any additional information we should know about how this data came to be. 
