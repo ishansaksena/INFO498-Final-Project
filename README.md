@@ -24,18 +24,17 @@ What other research has been done in this area? Make sure to include 3+ links to
 
 
 What is the dataset you'll be working with?  Please include background on who collected the data, where you accessed it, and any additional information we should know about how this data came to be. 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 > Since our research question is cross sectional, we will be using datasets from both the health as well as community and environment sectors to answer the question. Based on our initial search, we found the following datasets that will help us analyze the impact of built environments on mental health. These have been listed below:
 1. American Household Survey (By Metropolitan Region)
 2. National Mental Health Services Survey (NMHSS)
 3. 500 Cities Health Statistics Data
 4. Survey of Income and Program Participation (SIPP)
-=======
+
 > Since our research question is cross sectional, we will be using datasets from health, community and environment sectors to answer them. Based on our initial search, we found three datasets that will help us analyze the impact of built environments on mental health. These have been listed below:
-=======
+
 > Since our research question is cross sectional, we will be using datasets from health, community and environment sectors to answer them. Based on our initial search, we found the following datasets that will help us analyze the impact of built environments on mental health. These have been listed below:
->>>>>>> 82de5670f408418ede77266193da53c09f36c9b7
+
 
   1. **American Household Survey (By Metropolitan Region)** - The AHS is sponsored by the Department of Housing and Urban          Development (HUD) and conducted by the U.S. Census Bureau. The survey is the most comprehensive national housing survey       in the United States. The dataset includes each of 47 selected Metropolitan Areas that are collected about every 4 years,      with an average of 12 areas included each year. We acceseed the dataset from the website                                      https://www.census.gov/programs-surveys/ahs/ which is downloadable in SAS and ASCII formats.
   
@@ -59,7 +58,7 @@ What should your audience learn from your resource? Please list out at least 3 s
 > We feel that with more urbanization, it is critical that sustainable cities are developed, the focus here being on 'sustainable'. Our goal is to communicate the following insights to our target audience:  
 1. How different types of built environment are accessible in different metropolitan regions?
 2. How does accessibilty of built environments affect mental health, in terms of correlations?
-3. What is the correlation between accessibility to different built environment and mental health for different demographics of the population (based on age)?
+3. What is the correlation between accessibility to different built environment and mental health for different demographics of the population (based on age, location, etc.)?
 
 
 ## Technical Description
