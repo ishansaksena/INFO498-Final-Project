@@ -44,11 +44,20 @@ What should your audience learn from your resource? Please list out at least 3 s
 
 ## Technical Description
 
-What will be the format of your final product (Shiny app, HTML page or slideshow compiled with KnitR, etc.)?  
+What will be the format of your final product (Shiny app, HTML page or slideshow compiled with KnitR, etc.)?
+>The final product is planned to be a website with different sections addressing the level of access to various types of built environments such as grocery stores, parks and transportation infrastructure and its impact on the mental health of people. Each section will have one or more interactive visualizations, built with Shiny/R or D3.js if necessary. 
+
 
 Do you anticipate any specific data collection / data management challenges?  
+>While there is plenty of data available describing built environments and health data, there are very few datasets describing both. Because the nature of the question is cross-sectional, we might lose some rigour in combining these data sets on the basis of location. 
+
 
 What new technical skills will need to learn in order to complete your project?  
+>We expect to learn a lot more of R/Shiny. 
+>We also hope to gain sufficient skills to wrangle and extract insights out of survey data.
 
 What major challenges do you anticipate?   
+>We might need some help picking appropriate statistical models/measures to quantify these relationships. 
+ 
+
 
