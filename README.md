@@ -19,7 +19,7 @@ What other research has been done in this area? Make sure to include 3+ links to
 3. Mental Health and the Built Environment. 2002. British Journal of Psychiatry.180, 420-433. Weich Scott, Martin B., Martin P., Elizabeth B., Bob E,. Kerry S.
 >This paper assesess the prevalence of depression due to the different built environment features, as part of a cohort study performed in North London.  
 
-3. Sorting Out the Connections Between the Built Environment and Health: A Conceptual Framework for Navigating Pathways and Planning Healthy Cities. Northridge. ME1., Sclar, ED., Biswas, P., J Urban Health. 2003 Dec;80(4):556-68.
+4. Sorting Out the Connections Between the Built Environment and Health: A Conceptual Framework for Navigating Pathways and Planning Healthy Cities. Northridge. ME1., Sclar, ED., Biswas, P., J Urban Health. 2003 Dec;80(4):556-68.
 >This paper highlights the importance of integration of public health in the early stages of urban design and development. It also analyzes the shortcomings of existing methods of data collection in this realm. The paper also make a point of key challenges to be give importance for a sound scientific research to be conducted on relationship between the built environment and health.
 
 
