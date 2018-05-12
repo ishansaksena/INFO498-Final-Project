@@ -1,10 +1,11 @@
 # Population Health Informatics Final Project
+## Team Members: Ishan Saksena, Jayashree Raman, Naga Soundari Balamurugan, Zubin Chopra
 ## Project Description
 
 What is the purpose of your research project?
 >To quantify the relationship between preventable mental health outcomes and factors in an individual's built environment. A built environment includes, but is not limited to access to healthy food resources, parks, transportation facilities. The term is often extended to mean any man-made surrounding. 
 
->This would involve looking at combining health outcome datasets with built environment datasets. We would further have to establish pathways based on what stressors the environment introduces and which health outcomes are affected. We can also look at correlation between characteristics of geographic areas and mental health outcomes in that area. Our area of focus is primarily metropolitan regions, as these have a high concentration of built environments.
+>This would involve looking at combining health outcome datasets with built environment datasets. We would further have to establish pathways based on what stressors the environment introduces and which health outcomes are affected. We would also look at correlation between characteristics of geographic regions and mental health outcomes prevalent in the corresponding region. Our area of focus is primarily on metropolitan regions, as these have a high concentration of built environments.
 
 
 What other research has been done in this area? Make sure to include 3+ links to related works. 
@@ -20,26 +21,30 @@ What other research has been done in this area? Make sure to include 3+ links to
 
 
 What is the dataset you'll be working with?  Please include background on who collected the data, where you accessed it, and any additional information we should know about how this data came to be. 
-> Since our research question is cross sectional, we will be using datasets from both the health as well as community and environment sectors to answer the question. Based on our initial search, we found three datasets that will help us analyze the impact of built environments on mental health. These have been listed below:
-1. American Household Survey (By Metropolitan Region)
-2. National Mental Health Services Survey (NMHSS)
-3. 500 Cities Health Statistics Data
-4. Survey of Income and Program Participation (SIPP)
+> Since our research question is cross sectional, we will be using datasets from health, community and environment sectors to answer them. Based on our initial search, we found three datasets that will help us analyze the impact of built environments on mental health. These have been listed below:
+
+  1. **American Household Survey (By Metropolitan Region)** - The AHS is sponsored by the Department of Housing and Urban          Development (HUD) and conducted by the U.S. Census Bureau. The survey is the most comprehensive national housing survey       in the United States. The dataset includes each of 47 selected Metropolitan Areas that are collected about every 4 years,      with an average of 12 areas included each year. We acceseed the dataset from the website                                      https://www.census.gov/programs-surveys/ahs/ which is downloadable in SAS and ASCII formats.
+  
+  2. **National Mental Health Services Survey (NMHSS)** - These data were from the survey conducted by Mathematica Policy          Research and sponsored by Substance Abuse and Mental Health Services Administration (SAMHSA) and U.S. Department of           Health and Human Services (HHS). Data accessible through https://survey.nmhss.org/
+
+  3. **500 Cities Health Statistics Data** - The 500 Cities project is a collaboration between CDC, the Robert Wood Johnson        Foundation, and the CDC Foundation. The purpose of this Project is to provide city- and census tract-level small area         estimates for chronic disease risk factors, health outcomes, and clinical preventive service use for the largest 500          cities in the United States. Data accessible through https://www.cdc.gov/500cities/
+  
+  4. **Survey of Income and Program Participation (SIPP)** - SIPP is the premier source of information for income and program      participation. SIPP collects data and measures change for many topics including: economic well-being, family dynamics,        education, assets, health insurance, childcare, and food security. The U.S. census bureau sponsored the survey under a        law that protects all the responsdents and their privacy. Data accessible through                                             https://www.census.gov/programs-surveys/sipp/data.html
 
 
 Who is your target audience?  Depending on the domain of your data, there may be a variety of audiences interested in using the dataset. You should hone in on one of these audiences.  
 >Our main audience would include Government and City level representatives, Construction companies and Non-Profit organizations. We would like city level government representatives to be our main target audience because they make the call on local health and development initiatives. They should be informed about what are the most effective investments in built environments to improve health outcomes. The results from this project will enable researchers to back their claims with empirical data. This will prove to be instrumental in convincing the policy makers and making them aware of the issues regarding this matter.
 
->In addition to the stakeholders mentioned above, we also want to target this project towards urban city designers and developers and public health specialists. We believe that these two stakeholders need to work together in order to devise effective policies. This will enable population health concerns to addressed and integrated in the design of upcoming cities itself before the plans are actually implemented.
+>In addition to the stakeholders mentioned above, we also want to target this project towards urban city designers/developers and public health specialists. We believe that these two stakeholders need to work together in order to devise effective policies. This will enable population health concerns to addressed and integrated in the design of upcoming cities itself before the plans are actually implemented.
 
 >Lastly, we also want to share the results of this research with people living in the areas we will be covering through this project. This is because, in the end, it is the people who face the brunt of the urban plans and policies introduced by those in power. This makes it imperative to make the public aware of the connection between built environments and public health. This will enable projects in this field to discover new perspectives and integrate them in the design of policies.
 
 
 What should your audience learn from your resource? Please list out at least 3 specific questions that your project will answer for your audience  
 > We feel that with more urbanization, it is critical that sustainable cities are developed, the focus here being on 'sustainable'. Our goal is to communicate the following insights to our target audience:  
-1. How accessible different types built environments are in different metropolitan regions?
-2. How does accessibilty of built environments affect mental health, in terms of caorrelations?
-3. What is the correlation between accessibility to different built environments and mental health for different demographics of the population (based on age)?
+1. How different types of built environment are accessible in different metropolitan regions?
+2. How does accessibilty of built environments affect mental health, in terms of correlations?
+3. What is the correlation between accessibility to different built environment and mental health for different demographics of the population (based on age)?
 
 
 ## Technical Description
