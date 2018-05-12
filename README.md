@@ -43,7 +43,7 @@ What is the dataset you'll be working with?  Please include background on who co
   3. **500 Cities Health Statistics Data** - The 500 Cities project is a collaboration between CDC, the Robert Wood Johnson        Foundation, and the CDC Foundation. The purpose of this Project is to provide city- and census tract-level small area         estimates for chronic disease risk factors, health outcomes, and clinical preventive service use for the largest 500          cities in the United States. Data accessible through https://www.cdc.gov/500cities/
   
   4. **Survey of Income and Program Participation (SIPP)** - SIPP is the premier source of information for income and program      participation. SIPP collects data and measures change for many topics including: economic well-being, family dynamics,        education, assets, health insurance, childcare, and food security. The U.S. census bureau sponsored the survey under a        law that protects all the responsdents and their privacy. Data accessible through                                             https://www.census.gov/programs-surveys/sipp/data.html
->>>>>>> c42c2cadb1f15a6a0b691af17bcf6b4646637079
+
 
 
 Who is your target audience?  Depending on the domain of your data, there may be a variety of audiences interested in using the dataset. You should hone in on one of these audiences.  
