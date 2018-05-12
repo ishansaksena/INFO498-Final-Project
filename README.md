@@ -14,7 +14,10 @@ What other research has been done in this area? Make sure to include 3+ links to
 
 
 2. The impact of the physical and urban environment on mental well-being. Guite, HF., Clark, C., Ackrill, G., Public Health. 2006 Dec;120(12):1117-26. Epub 2006 Nov 9. 
->This paper affirms an association between the physical environment and mental well-being across a range of domains(neighbour noise, sense of over-crowding in the home and escape facilities such as green spaces and community facilities, and fear of crime), during a study conducted in four areas of Greenwich and London. This study also emphasizes the necessity to intervene on both design and social features of residential areas to promote mental well-being. 
+>This paper affirms an association between the physical environment and mental well-being across a range of domains(neighbour noise, sense of over-crowding in the home and escape facilities such as green spaces and community facilities, and fear of crime), during a study conducted in four areas of Greenwich and London. This study also emphasizes the necessity to intervene on both design and social features of residential areas to promote mental well-being.  
+
+3. Mental Health and the Built Environment. 2002. British Journal of Psychiatry.180, 420-433. Weich Scott, Martin B., Martin P., Elizabeth B., Bob E,. Kerry S.
+>This paper assesess the prevalence of depression due to the different built environment features, as part of a cohort study performed in North London.  
 
 3. Sorting Out the Connections Between the Built Environment and Health: A Conceptual Framework for Navigating Pathways and Planning Healthy Cities. Northridge. ME1., Sclar, ED., Biswas, P., J Urban Health. 2003 Dec;80(4):556-68.
 >This paper highlights the importance of integration of public health in the early stages of urban design and development. It also analyzes the shortcomings of existing methods of data collection in this realm. The paper also make a point of key challenges to be give importance for a sound scientific research to be conducted on relationship between the built environment and health.
