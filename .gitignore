@@ -1,3 +1,6 @@
+# Data sets are over 100MB
+data/*
+
 # History files
 .Rhistory
 .Rapp.history
