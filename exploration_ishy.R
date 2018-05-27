@@ -6,7 +6,7 @@ library(tidyverse)
 # https://www.cdc.gov/500cities/
 
 cities_health = read.csv("data/500Cities.csv")
-# View(head(cities_health))
+View(head(cities_health))
 
 seattle_health = filter(cities_health, CityName == "Seattle")
 # View(head(seattle_health))
@@ -40,6 +40,7 @@ View(head(walkability))
 
 # Cities that appear across all three datasets
 cities_of_interest = intersect(cities_health$CityName, intersect(walkability$City, park_rankings$City))
+tracts_of_interest = intersect(cities_health$TractFIPS, food_access$CensusTract)
 
 # Filter down to city
 filtered_cities_health_city_level = filter(cities_health, CityName %in% cities_of_interest)
@@ -65,15 +66,25 @@ View(city_level_walk_data)
 write.csv(city_level_walk_data, file = "prepped_data/Walkability.csv")
 
 # Filter down to census tract
-filtered_cities_health_tract_level = filter(cities_health, CityName %in% cities_of_interest)
+filtered_cities_health_tract_level = filter(cities_health, TractFIPS %in% tracts_of_interest)
 filtered_cities_health_tract_level = filter(filtered_cities_health_tract_level, GeographicLevel == "Census Tract")
 filtered_cities_health_tract_level = filter(filtered_cities_health_tract_level, Year == 2015)
 View(filtered_cities_health_tract_level)
 
 # Reshape Data
+filtered_cities_health_tract_level_subset = filtered_cities_health_tract_level[, c("TractFIPS" ,"CityName", "Measure", "Data_Value")]
+View(filtered_cities_health_city_level_subset)
+tract_level_reshaped = spread(filtered_cities_health_tract_level_subset, Measure, Data_Value)
+View(tract_level_reshaped)
 
 # Combine with Food Access Data
+colnames(tract_level_reshaped)[1] <- "CensusTract" 
+tract_level_food_data <- left_join(tract_level_reshaped, food_access)
+View(head(tract_level_food_data, 50))
+write.csv(tract_level_food_data, file = "prepped_data/FoodAccess.csv")
 
+
+################################################################################
 # Outcomes of interest (Variable names) @Jayashreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 # Binge drinking among adults aged >=18 Years
 # Current smoking among adults aged >=18 Years
