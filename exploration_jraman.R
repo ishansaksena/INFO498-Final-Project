@@ -93,14 +93,12 @@ x5 <- cor.test(as.numeric(city_level_walk_data$Transit.Score), city_level_walk_d
 #-0.1(high p-value)
 
 
-
+foodaccess <- foodaccess[complete.cases(foodaccess), ]
 foodaccess_non_urban <- foodaccess %>% filter(Urban==0)
 foodaccess_urban <- foodaccess %>% filter(Urban==1)
 
-foodaccess <- foodaccess[complete.cases(foodaccess), ]
-
 outcome_list <- c('ARTH', 'BINGE', 'CANCER', 'CHOLESTEROL', 'CHR_KIDNEY', 'CHR_PUL', 'COR_HD', 'ASTH', 'H_INS', 'SMOKE', 'DIAB', 'HIGH_BP', 'HIGH_CHOL', 'MENTAL_NOTGOOD', 'NO_LEISURE', 'OBESITY', 'PHY_NOTGOOD', 'STROKE', 'MED_BP', 'DOC')
-col1 <- 'lapop20'
+col1 <- 'lawhitehalfshare'
 corValuesForListOfOutcomes <- data.frame()
 names(corValuesForListOfOutcomes) <- c('corVal', 'pVal')
 
@@ -112,6 +110,36 @@ for (i in 1:length(outcome_list)) {
   print(corValuesForListOfOutcomes)
 }
 rownames(corValuesForListOfOutcomes) <- outcome_list
+
+
+outcome_list <- c('ARTH', 'BINGE', 'CANCER', 'CHOLESTEROL', 'CHR_KIDNEY', 'CHR_PUL', 'COR_HD', 'ASTH', 'H_INS', 'SMOKE', 'DIAB', 'HIGH_BP', 'HIGH_CHOL', 'MENTAL_NOTGOOD', 'NO_LEISURE', 'OBESITY', 'PHY_NOTGOOD', 'STROKE', 'MED_BP', 'DOC')
+col1 <- 'lablackhalfshare'
+corValuesForListOfOutcomes <- data.frame()
+names(corValuesForListOfOutcomes) <- c('corVal', 'pVal')
+
+subsetVal <- NULL
+for (i in 1:length(outcome_list)) {
+  x <- compute_correlation(foodaccess_urban, col1, outcome_list[i], subsetVal)
+  names(x) <- c('corVal', 'pVal')
+  corValuesForListOfOutcomes <- (rbind(corValuesForListOfOutcomes, as.data.frame(t(x))))
+  print(corValuesForListOfOutcomes)
+}
+rownames(corValuesForListOfOutcomes) <- outcome_list
+
+outcome_list <- c('ARTH', 'BINGE', 'CANCER', 'CHOLESTEROL', 'CHR_KIDNEY', 'CHR_PUL', 'COR_HD', 'ASTH', 'H_INS', 'SMOKE', 'DIAB', 'HIGH_BP', 'HIGH_CHOL', 'MENTAL_NOTGOOD', 'NO_LEISURE', 'OBESITY', 'PHY_NOTGOOD', 'STROKE', 'MED_BP', 'DOC')
+col1 <- 'laasianhalfshare'
+corValuesForListOfOutcomes <- data.frame()
+names(corValuesForListOfOutcomes) <- c('corVal', 'pVal')
+
+subsetVal <- NULL
+for (i in 1:length(outcome_list)) {
+  x <- compute_correlation(foodaccess_urban, col1, outcome_list[i], subsetVal)
+  names(x) <- c('corVal', 'pVal')
+  corValuesForListOfOutcomes <- (rbind(corValuesForListOfOutcomes, as.data.frame(t(x))))
+  print(corValuesForListOfOutcomes)
+}
+rownames(corValuesForListOfOutcomes) <- outcome_list
+
 
 ggplot(foodaccess_urban, aes(x = lawhitehalfshare, y =  MENTAL_NOTGOOD)) + geom_point() + expand_limits(x = 0, y = 0)
 
