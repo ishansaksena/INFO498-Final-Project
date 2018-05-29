@@ -29,11 +29,34 @@ compute_correlation <- function(dfName, col1, col2, subsetNum=NULL){
 # }
 #rownames(corValuesForListOfOutcomes) <- list_of_outcomes
 
-################# FUnction Usage Example Start ################
+################# FUnction Usage Example End ################
 
 
 
+################### Food Access ###########################
+foodaccess <- read.csv("prepped_data/FoodAccess.csv")
 
+
+
+################### Park Rankings  #######################
+park_rankings <- read.csv("prepped_data/ParkRankings.csv")
+
+#park_rankings <- park_rankings %>% arrange((desc(POPN)))
+
+outcome_list <- c('OBESITY','PHY_NOTGOOD','MENTAL_NOTGOOD','NO_LEISURE','HIGH_BP','DIAB')
+col1 <- 'PARK_SCORE'
+corValuesForListOfOutcomes <- data.frame()
+names(corValuesForListOfOutcomes) <- c('corVal', 'pVal')
+
+subsetVal <- 20
+for (i in 1:length(outcome_list)) {
+   x <- compute_correlation(park_rankings, col1, outcome_list[i], subsetVal)
+   names(x) <- c('corVal', 'pVal')
+   #temp <- x
+   corValuesForListOfOutcomes <- (rbind(corValuesForListOfOutcomes, as.data.frame(t(x))))
+   print(corValuesForListOfOutcomes)
+ }
+rownames(corValuesForListOfOutcomes) <- outcome_list
 
 
 
