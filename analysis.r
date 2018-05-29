@@ -11,17 +11,17 @@ vehicleperpub <- read.csv("prepped_data/perpub.csv")
 city_codes <- c()
 
 walkreason_valid <- vehicleperpub %>% filter(WALK_DEF > 0)
-city_codes <- ((unique(walkreason_valid$HH_CBSA)))
+city_codes <- (unique(walkreason_valid$HH_CBSA))
 #city_codes <- city_codes %>% filter(HH_CBSA_NOTNULL != 'XXXXX')
-city_names <- list("Atlanta", "Austin", "Baltimore", "Birmingham", "Boston", "Buffalo","Charlotte", "Chicago", "Cincinnati", "Cleveland", "Columbus", "Dallas", "Denver", "Detroit", "Grand Rapids", "Hartford", "Houston", "Indianapolis", "Jacksonville", "Kansas City", "Las Vegas", "Los Angeles", "Louisville", "Memphis", "Miami", "Milwaukee", "Minneapolis", "Nashville", "New Orleans", "New York", "Oklahoma", "Orlando", "Philadelphia", "Phoenix", "Pittsburgh", "Portland", "Providence", "Raleigh", "Richmond", "Riverside", "Rochester", "Sacramento", "St. Louis", "Salt Lake City", "San Antonio", "San Diego", "San Francisco", "San Jose", "Seattle", "Tampa", "Virginia", "Washington", "NA")
-
+city_names <- c("Atlanta", "Austin", "Baltimore", "Birmingham", "Boston", "Buffalo","Charlotte", "Chicago", "Cincinnati", "Cleveland", "Columbus", "Dallas", "Denver", "Detroit", "Grand Rapids", "Hartford", "Houston", "Indianapolis", "Jacksonville", "Kansas City", "Las Vegas", "Los Angeles", "Louisville", "Memphis", "Miami", "Milwaukee", "Minneapolis", "Nashville", "New Orleans", "New York", "Oklahoma", "Orlando", "Philadelphia", "Phoenix", "Pittsburgh", "Portland", "Providence", "Raleigh", "Richmond", "Riverside", "Rochester", "Sacramento", "St. Louis", "Salt Lake City", "San Antonio", "San Diego", "San Francisco", "San Jose", "Seattle", "Tampa", "Virginia", "Washington", "NA")
 
 citycode <- c()
 count <- c()
-
+ 
 for (i in 1:length(city_codes)) {
-  citycode[[i]] <- as.vector(city_codes[i])
-  count[i] <- count(vehicleperpub %>% filter(WALK_DEF > 0 & HH_CBSA == city_codes[i]))
+    citycode[[i]] <- as.vector(city_codes[i])
+    j <- vehicleperpub %>% filter(WALK_DEF > 0 & HH_CBSA == city_codes[i])
+    count[i] <- nrow(vehicleperpub %>% filter(WALK_DEF > 0 & HH_CBSA == city_codes[i]))
 }
 
 x <- as.data.frame(cbind(citycode, count))
