@@ -27,6 +27,8 @@ compute_correlation <- function(dfName, col1, col2, subsetNum=NULL){
 #   x <- compute_correlation(df, col1, list_of_outcomes[i], subsetVal)
 #   rbind(corValuesForListOfOutcomes, x)
 # }
+#rownames(corValuesForListOfOutcomes) <- list_of_outcomes
+
 ################# FUnction Usage Example Start ################
 
 
