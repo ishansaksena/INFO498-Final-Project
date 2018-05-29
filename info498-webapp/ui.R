@@ -16,6 +16,12 @@ shinyUI(fluidPage(
   titlePanel("Built Environments and their Effects on Health"),
   
   tabsetPanel(type = "tabs",
+
+    tabPanel("About Us" # Add a comma here when writing code for this tab
+    
+      # Add content for the About Us Tab
+    
+    ),
     
     tabPanel("Parks",
       sidebarLayout(
