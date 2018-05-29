@@ -12,20 +12,24 @@ city_codes <- c()
 walkreason_valid <- vehicleperpub %>% filter(WALK_DEF > 0)
 city_codes <- (unique(walkreason_valid$HH_CBSA))
 #city_codes <- city_codes %>% filter(HH_CBSA_NOTNULL != 'XXXXX')
+city_names <- c("Atlanta", "Austin", "Baltimore", "Birmingham", "Boston", "Buffalo","Charlotte", "Chicago", "Cincinnati", "Cleveland", "Columbus", "Dallas", "Denver", "Detroit", "Grand Rapids", "Hartford", "Houston", "Indianapolis", "Jacksonville", "Kansas City", "Las Vegas", "Los Angeles", "Louisville", "Memphis", "Miami", "Milwaukee", "Minneapolis", "Nashville", "New Orleans", "New York", "Oklahoma", "Orlando", "Philadelphia", "Phoenix", "Pittsburgh", "Portland", "Providence", "Raleigh", "Richmond", "Riverside", "Rochester", "Sacramento", "St. Louis", "Salt Lake City", "San Antonio", "San Diego", "San Francisco", "San Jose", "Seattle", "Tampa", "Virginia", "Washington", "NA")
+
+vehicleperpub_modified <- lapply(vehicleperpub, factor, 
+                        levels=city_codes, 
+                        labels = city_names)
 
 citycode <- c()
-count <- c()
- 
 for (i in 1:length(city_codes)) {
   citycode[[i]] <- as.vector(city_codes[i])
   count[i] <- count(vehicleperpub %>% filter(WALK_DEF > 0 & HH_CBSA == city_codes[i]))
 }
 
 x <- cbind(citycode, count)
-
+x_mod <- lapply(x, factor, 
+                levels=citycode, 
+                labels = city_names)
 
 walkreason_safety_valid <- vehicleperpub %>% filter(WALK_GKQ > 0)
-
 
 ######ParkScore
 corval <- cor.test(parkRankings$ParkScore, parkRankings$Binge.drinking.among.adults.aged...18.Years) #0.5547509
@@ -63,3 +67,5 @@ corval <- cor.test(as.numeric(walkability$Bike.Score), walkability$Taking.medici
 ggplot(parkRankings, aes(x = ParkScore, y =  Mental.health.not.good.for...14.days.among.adults.aged...18.Years)) + geom_point() + expand_limits(x = 0, y = 0)
 ggplot(parkRankings, aes(x = ParkScore, y =  No.leisure.time.physical.activity.among.adults.aged...18.Years)) + geom_point()
 ggplot(parkRankings, aes(x = ParkScore, y =  Binge.drinking.among.adults.aged...18.Years)) + geom_point()
+
+
