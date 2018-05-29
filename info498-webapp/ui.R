@@ -17,10 +17,15 @@ shinyUI(fluidPage(
   
   tabsetPanel(type = "tabs",
 
-    tabPanel("About Us" # Add a comma here when writing code for this tab
+    tabPanel("Introduction" # Add a comma here when writing code for this tab
     
       # Add content for the About Us Tab
     
+    ),
+    tabPanel("Data" # Add a comma here when writing code for this tab
+             
+             # Add content for the About Us Tab
+             
     ),
     
     tabPanel("Parks",

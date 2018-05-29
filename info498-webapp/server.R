@@ -9,6 +9,10 @@
 
 library(shiny)
 source("park_viz.R")
+source("walkability_viz.R")
+source("food_access_viz.R")
+source("introduction_viz.R")
+source("data_viz.R")
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
