@@ -19,6 +19,7 @@ vehicleperpub_modified <- lapply(vehicleperpub, factor,
                         labels = city_names)
 
 citycode <- c()
+count <- c()
 for (i in 1:length(city_codes)) {
   citycode[[i]] <- as.vector(city_codes[i])
   count[i] <- count(vehicleperpub %>% filter(WALK_DEF > 0 & HH_CBSA == city_codes[i]))
