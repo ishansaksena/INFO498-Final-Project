@@ -14,7 +14,7 @@ parkViz <- function(condition) {
   plot <- ggplot(park_data_viz, aes(x = park_data_viz[condition], y = park_data_viz$`Park Score`)) + 
     geom_point(aes(col = "indianred")) +
     geom_smooth(method = "lm", se = T, col = "deepskyblue3") +
-    labs(x = condition, y = "Park Score") + 
+    labs(x = condition, y = "Park Score", title = paste0(condition, " VS Park Score")) + 
     theme(
       legend.position = "none",
       panel.background = element_rect(fill = "gray29",
@@ -33,7 +33,7 @@ parkBarGraph <- function(condition) {
   df <- df[, c("City", condition)]
   plot <- ggplot(df, aes(x = City, y = df[condition])) +
     geom_bar(stat = "identity", width = .5, fill = "lightcoral") + 
-    labs(x = "City", y = paste0(condition, "(%)")) +
+    labs(x = "City", y = paste0(condition, "(%)"), title = paste0("Top 10 Cities with Highest Levels of ", condition)) +
     theme(
       legend.position = "none",
       panel.background = element_rect(fill = "gray29",
