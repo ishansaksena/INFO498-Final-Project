@@ -18,7 +18,6 @@ shinyUI(fluidPage(
   tabsetPanel(type = "tabs",
     
     tabPanel("Parks",
-      # Sidebar with a slider input for number of bins 
       sidebarLayout(
         sidebarPanel(
            selectInput("select_condition", label = h3("Select Condition"), 
@@ -26,7 +25,6 @@ shinyUI(fluidPage(
                        selected = 1)
         ),
         
-        # Show a plot of the generated distribution
         mainPanel(
            plotOutput("parkGraph"),
            plotOutput("parkBarGraph")
@@ -34,7 +32,17 @@ shinyUI(fluidPage(
       )
     ),
     
-    tabPanel("Walkability")
+    tabPanel("Walkability" # Add a comma here when writing code for this tab
+    
+      # Add code for walkability viz here
+                      
+    ),
+    
+    tabPanel("Food" # Add a comma here when writing code for this tab
+      
+      # Add code for food viz here
+             
+    )
     
   )
     
