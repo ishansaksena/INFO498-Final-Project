@@ -21,7 +21,7 @@ shinyUI(fluidPage(
       sidebarLayout(
         sidebarPanel(
            selectInput("select_condition", label = h3("Select Condition"), 
-                       choices = list("Arthiritis", "Binge Drinking", "Coronary Heart Disease", "Asthma", "Smoking", "High Blood Pressure", "High Cholestrol", "Mental Health", "Obesity", "Physical Health"), 
+                       choices = list("Arthritis", "Binge Drinking", "Coronary Heart Disease", "Asthma", "Smoking", "High Blood Pressure", "High Cholestrol", "Mental Health", "Obesity", "Physical Health"), 
                        selected = 1)
         ),
         
