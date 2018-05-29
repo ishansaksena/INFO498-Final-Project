@@ -1,6 +1,7 @@
 library(yarrr)
 library(ggplot2)
 library(dplyr)
+library(plyr)
 
 #Read files
 parkRankings <- read.csv("prepped_data/ParkRankings.csv")
@@ -10,16 +11,14 @@ vehicleperpub <- read.csv("prepped_data/perpub.csv")
 city_codes <- c()
 
 walkreason_valid <- vehicleperpub %>% filter(WALK_DEF > 0)
-city_codes <- as.character((unique(walkreason_valid$HH_CBSA)))
+city_codes <- ((unique(walkreason_valid$HH_CBSA)))
 #city_codes <- city_codes %>% filter(HH_CBSA_NOTNULL != 'XXXXX')
-city_names <- c("Atlanta", "Austin", "Baltimore", "Birmingham", "Boston", "Buffalo","Charlotte", "Chicago", "Cincinnati", "Cleveland", "Columbus", "Dallas", "Denver", "Detroit", "Grand Rapids", "Hartford", "Houston", "Indianapolis", "Jacksonville", "Kansas City", "Las Vegas", "Los Angeles", "Louisville", "Memphis", "Miami", "Milwaukee", "Minneapolis", "Nashville", "New Orleans", "New York", "Oklahoma", "Orlando", "Philadelphia", "Phoenix", "Pittsburgh", "Portland", "Providence", "Raleigh", "Richmond", "Riverside", "Rochester", "Sacramento", "St. Louis", "Salt Lake City", "San Antonio", "San Diego", "San Francisco", "San Jose", "Seattle", "Tampa", "Virginia", "Washington", "NA")
+city_names <- list("Atlanta", "Austin", "Baltimore", "Birmingham", "Boston", "Buffalo","Charlotte", "Chicago", "Cincinnati", "Cleveland", "Columbus", "Dallas", "Denver", "Detroit", "Grand Rapids", "Hartford", "Houston", "Indianapolis", "Jacksonville", "Kansas City", "Las Vegas", "Los Angeles", "Louisville", "Memphis", "Miami", "Milwaukee", "Minneapolis", "Nashville", "New Orleans", "New York", "Oklahoma", "Orlando", "Philadelphia", "Phoenix", "Pittsburgh", "Portland", "Providence", "Raleigh", "Richmond", "Riverside", "Rochester", "Sacramento", "St. Louis", "Salt Lake City", "San Antonio", "San Diego", "San Francisco", "San Jose", "Seattle", "Tampa", "Virginia", "Washington", "NA")
 
-vehicleperpub_modified <- lapply(vehicleperpub$HH_CBSA, factor, 
-                        levels=city_codes, 
-                        labels = city_names)
 
 citycode <- c()
 count <- c()
+
 for (i in 1:length(city_codes)) {
   citycode[[i]] <- as.vector(city_codes[i])
   count[i] <- count(vehicleperpub %>% filter(WALK_DEF > 0 & HH_CBSA == city_codes[i]))
@@ -27,9 +26,9 @@ for (i in 1:length(city_codes)) {
 
 x <- as.data.frame(cbind(citycode, count))
 
-x_mod <- lapply(x$citycode, factor, 
-                levels=citycode, 
-                labels = city_names)
+x$citycode = factor(x$citycode, 
+                     levels = city_codes, 
+                     labels = city_names)
 
 walkreason_safety_valid <- vehicleperpub %>% filter(WALK_GKQ > 0)
 
