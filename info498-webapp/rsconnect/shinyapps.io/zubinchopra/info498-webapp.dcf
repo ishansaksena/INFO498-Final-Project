@@ -5,8 +5,8 @@ account: zubinchopra
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 350279
-bundleId: 1397606
+bundleId: 1398790
 url: https://zubinchopra.shinyapps.io/info498-webapp/
-when: 1527573283.95965
+when: 1527612269.513
 asMultiple: FALSE
 asStatic: FALSE
