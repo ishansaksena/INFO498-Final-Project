@@ -29,4 +29,16 @@ shinyServer(function(input, output) {
     
   })
   
+  output$bikeGraph <- renderPlot({
+    
+    bikeViz(input$select_condition)
+    
+  })
+  
+  output$bikeBarGraph <- renderPlot({
+    
+    bikeBarGraph(input$select_condition)
+    
+  })
+  
 })
