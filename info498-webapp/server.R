@@ -30,15 +30,14 @@ shinyServer(function(input, output) {
   })
   
   output$bikeGraph <- renderPlot({
-    
-    bikeViz(input$select_condition)
-    
+
+    bikeviz(input$select_condition_bike)
   })
   
   output$bikeBarGraph <- renderPlot({
-    
-    bikeBarGraph(input$select_condition)
-    
+    bikeBarGraph(input$select_condition_bike)
+
   })
   
+ 
 })

@@ -106,12 +106,12 @@ shinyUI(fluidPage(
       )
     ),
     
-    tabPanel("Bikeability", # Add a comma here when writing code for this tab
+    tabPanel("Bikeability",
     
       # Add code for bikeability viz here
       sidebarLayout(
         sidebarPanel(
-          selectInput("select_condition", label = h3("Select Condition"), 
+          selectInput("select_condition_bike", label = h3("Select Condition"), 
                       choices = list("Arthritis", "Binge Drinking", "Coronary Heart Disease", "Asthma", "Smoking", "High Blood Pressure", "High Cholestrol", "Mental Health", "Obesity", "Physical Health"), 
                       selected = 1)
         ),
@@ -121,7 +121,7 @@ shinyUI(fluidPage(
           plotOutput("bikeBarGraph")
         )
       )
-                      
+
     ),
     
     tabPanel("Food" # Add a comma here when writing code for this tab
