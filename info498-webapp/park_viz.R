@@ -16,7 +16,7 @@ parkViz <- function(condition) {
   mytext=paste("Park Score = ", park_data_viz$`Park Score`, "\n", "City: ", park_data_viz$City,  sep="")    
   
   plot <- ggplot(park_data_viz, aes(x = park_data_viz[condition], y = park_data_viz$`Park Score`)) + 
-    geom_point(aes(col = "indianred")) +
+    geom_point(col = "indianred", aes(text = paste0("City: ", park_data_viz$City, "<br />", "Park Score: ", park_data_viz$`Park Score`))) +
     geom_smooth(method = "lm", se = T, col = "deepskyblue3") +
     labs(x = condition, y = "Park Score", title = paste0(condition, " VS Park Score")) + 
     theme(
@@ -30,16 +30,16 @@ parkViz <- function(condition) {
                                       colour = "gray94")
     )
   
-  plot <- ggplotly(plot)
+  plot <- ggplotly(ggplotly(plot, tooltip = c("text")))
   
   return (plot)
 }
 
 parkBarGraph <- function(condition) {
   df <- head(park_data_viz[order(-park_data_viz[condition]), ], 10)
-  df <- df[, c("City", condition)]
+  df <- df[, c("City", "Park Score", condition)]
   plot <- ggplot(df, aes(x = City, y = df[condition])) +
-    geom_bar(stat = "identity", width = .5, fill = "lightcoral") + 
+    geom_bar(stat = "identity", width = .5, fill = "lightcoral", aes(text = paste0("Disease: ", df[ ,condition], "%", "<br>", "Park Score: ", df$`Park Score`))) + 
     labs(x = "City", y = paste0(condition, "(%)"), title = paste0("Top 10 Cities with Highest Levels of ", condition)) +
     theme(
       legend.position = "none",
@@ -52,8 +52,7 @@ parkBarGraph <- function(condition) {
                                       colour = "gray94")
     )
   
-  plot <- ggplotly(plot)
-  style(plot, hoverinfo = "none")
+  plot <- ggplotly(ggplotly(plot, tooltip = c("text")))
   
   return (plot)
 }
