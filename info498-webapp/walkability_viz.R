@@ -14,12 +14,14 @@ cols <- c("City", "Arthritis.among.adults.aged...18.Years", "Binge.drinking.amon
 bike_data_viz <- bikeability_data[, cols]
 colnames(bike_data_viz) <- c("City", "Arthritis", "Binge Drinking", "Coronary Heart Disease", "Asthma", "Smoking", "High Blood Pressure", "High Cholestrol", "Mental Health", "Obesity", "Physical Health", "Bike Score")
 
+bike_data_viz$`Bike Score` = as.numeric(levels(bike_data_viz$`Bike Score`))[bike_data_viz$`Bike Score`]
+bike_data_viz <- bike_data_viz %>% filter(is.na(bike_data_viz$`Bike Score`) == F)
 
 bikeviz <- function(condition) {
   plot <- ggplot(bike_data_viz, aes(x = bike_data_viz[condition], y = bike_data_viz$`Bike Score`)) + 
-    scale_x_discrete(breaks = seq(20, 100, by = 10)) +
     geom_point(aes(col = "indianred")) +
-    #geom_smooth(method = "lm", se = T, col = "deepskyblue3") +
+    geom_smooth(method = "lm", se = T, col = "deepskyblue3") +
+    ylim(limits = c(30, 80)) +
     labs(x = condition, y = "Bike Score", title = paste0(condition, " VS Bike Score")) + 
     theme(
       legend.position = "none",
