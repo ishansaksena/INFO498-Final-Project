@@ -17,7 +17,7 @@ source("data_viz.R")
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
    
-  output$parkGraph <- renderPlot({
+  output$parkGraph <- renderPlotly({
     
     parkViz(input$select_condition)
     

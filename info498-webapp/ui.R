@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(plotly)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
@@ -100,7 +101,7 @@ shinyUI(fluidPage(
         ),
         
         mainPanel(
-           plotOutput("parkGraph"),
+           plotlyOutput("parkGraph"),
            plotOutput("parkBarGraph")
         )
       )
@@ -118,7 +119,7 @@ shinyUI(fluidPage(
         
         mainPanel(
           plotOutput("bikeGraph"),
-          plotOutput("bikeBarGraph")
+          plotlyOutput("bikeBarGraph")
         )
       )
 

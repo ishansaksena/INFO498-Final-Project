@@ -51,6 +51,7 @@ bikeBarGraph <- function(condition) {
       panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
                                       colour = "gray94")
     )
+  plot <- ggplotly(plot)
   return (plot)
 }
 
