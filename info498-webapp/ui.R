@@ -21,9 +21,9 @@ shinyUI(fluidPage(
     
       # Add content for the About Us Tab
       mainPanel(
-        h2("Built Environments: Neighbourhoods"),
+        h3("Built Environments: Neighbourhoods"),
         h5("A built environment includes, but is not limited to access to healthy food resources, parks, transportation facilities."),
-        h5("We considered three main types of Built Environments:"),
+        h5("For our analysis, we explored three main types of Built Environments and their effect on Public Health"),
         tags$ul(
           tags$li("Parks"), 
           tags$li("Transportation"), 
@@ -31,12 +31,12 @@ shinyUI(fluidPage(
         ),
         h5("We used aggregated scores for each of these built environments for different cities in the United States and correlated it with the physical and mental heath outcomes for those cities"),
         
-        h2("Significance"),
+        h3("Significance"),
         h5("With most of the population migrating towards urban areas, we feel that planning and building a sustainable urban environment is very critical and essential"),
         h5("By analyzing the effect of different built environments and their effect on general public health, we wanted to emphasize what factors must be kept in mind while planning urban infrastructure."),
         
         
-        h2("Target Audience"),
+        h3("Target Audience"),
         tags$ul(
           tags$li("Urban City Planners"), 
           tags$li("Construction Firms"), 
@@ -61,6 +61,7 @@ shinyUI(fluidPage(
           "From this dataset we used data on binge drinking, smoking, sleep durations, time for leisure and physical activities,
           blood pressure and mental health."
         ),
+        p("The purpose of the 500 Cities Project is to provide city- and census tract-level small area estimates for chronic disease risk factors, health outcomes, and clinical preventive service use for the largest 500 cities in the United States."),
         
         h2("Park Quality"),
         p(
@@ -70,6 +71,10 @@ shinyUI(fluidPage(
           "From this dataset we used just the park score for each city. We then calculated correlations with 
           the above listed factors from the 500 Cities Health Dataset."
         ),
+        p("The Trust for Public Land's ParkScore Index is the most comprehensive rating system ever developed to measure how well
+          the 100 largest US cities are meeting the needs for parks."),
+        p("Using an advanced GIS (Geographic Information System), ParkScore provides in-depth data to guide local park improvement efforts. Our mapping technology identifies which neighborhoods and demographics are underserved by parks and how many people are able to reach a park within a ten-minute walk. 
+          Cities can earn a maximum ParkScore of 100."),
         
         h2("Walkability and Bikeability"),
         p(
@@ -79,6 +84,8 @@ shinyUI(fluidPage(
           "From this dataset we used just the three scores i.e. walkability, bikeability, and transit scores for each city. 
           We then calculated correlations with the above listed factors from the 500 Cities Health Dataset."
         ),
+        p("Distance to local resources (e.g., stores, public buildings, transportation) can be an indicator for community participation in that it shows access to participation in a city. The Walk Score (www.walkscore.com) is a publicly available system for determining scores based on the distance to and variety of community facilities. The score is available at different levels but has shown to be valid within a distance of a mile. 
+          It is a score of 0-100, 100 being most accessible within a quarter mile and 0 being car dependent."),
         
         
         h2("Food Access"),
@@ -96,7 +103,19 @@ shinyUI(fluidPage(
         sidebarPanel(
            selectInput("select_condition", label = h3("Select Condition"), 
                        choices = list("Arthritis", "Binge Drinking", "Coronary Heart Disease", "Asthma", "Smoking", "High Blood Pressure", "High Cholestrol", "Mental Health", "Obesity", "Physical Health"), 
-                       selected = 1)
+                       selected = 1),
+           h3("Analysis"),
+           tags$ul(
+             tags$li("From the correlation plot, we see that diabetes, coronary heart disease, obesity, poor physical health and 
+              high cholesterol have a moderately negative correlation with increasing Park Score."), 
+             tags$li("Similarly, poor mental health and lack of leisure time are also negatively correlated with increasing Park Scores."), 
+             tags$li("This is an encouraging sign towards making sure that cities have better Park Scores, emphasizing that it would be wise 
+              to invest in the development of parks.")
+           
+           ),
+           em("Note: We find that Binge Drinking has a positive correlation with Park Scores, which is not a very optimistic sign.
+              It could be attributed to the small size of the dataset that we analyzed or really probable.")
+           
         ),
         
         mainPanel(
@@ -113,7 +132,20 @@ shinyUI(fluidPage(
         sidebarPanel(
           selectInput("select_condition_bike", label = h3("Select Condition"), 
                       choices = list("Arthritis", "Binge Drinking", "Coronary Heart Disease", "Asthma", "Smoking", "High Blood Pressure", "High Cholestrol", "Mental Health", "Obesity", "Physical Health"), 
-                      selected = 1)
+                      selected = 1),
+          tags$ul(
+            tags$b(tags$li("Walk Scores:")),
+            p("We found a very poor correlation for Walkability Scores of the cities and the prevalence of physical heath outcomes such as 
+              Obesity, Coronary Heart Disease, High Blood Pressure, High Cholesterol, as well as mental health outcomes such as poor mental health and no leisure time."),
+            tags$b(tags$li("Bike Scores:")), 
+            p("We found that there was a moderate negative correlation between the Bike Score of a city and the prevalence of Diabetes
+              and High Cholesterol in the city. Other than these outcomes, there weren't any significant relationships between the health outcomes and bike scores of the cities."),
+            tags$b(tags$li("Transit Scores:")),
+            p("Again, we found a very low correlation for the Transit Scores of the cities and the prevalence of physical heath outcomes such as 
+              Obesity, Coronary Heart Disease, High Blood Pressure, High Cholesterol, as well as mental health outcomes such as poor mental health and no leisure time."),
+            
+            em("Note: We find that Binge Drinking has a positive correlation with all three of Walk Scores, Bike Scores and Transit Scores.")
+          )
         ),
         
         mainPanel(
@@ -124,9 +156,16 @@ shinyUI(fluidPage(
 
     ),
     
-    tabPanel("Food" # Add a comma here when writing code for this tab
+    tabPanel("Food", # Add a comma here when writing code for this tab
       
       # Add code for food viz here
+      sidebarPanel(
+        
+        
+      p("For Food Access")
+        
+        
+      )
              
     )
     
