@@ -165,14 +165,13 @@ shinyUI(fluidPage(
            
            h3("Analysis"),
            
-           p("Hello")
+           p("We found moderate negative correlations between high cholesterol levels, obesity and low access to stores more than 10 miles away.")
            
          ),
          
          mainPanel(
-           plotOutput("foodAccessGraph")
+           plotlyOutput("foodAccessGraph")
          ),
-         
        )
     )
   )

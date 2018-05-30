@@ -58,8 +58,6 @@ parkBarGraph <- function(condition) {
 }
 
 parkCityBarGraph_top10 <- function() {
-  #df <- head(park_data_viz[order(-park_data_viz[condition]), ], 10)
-  #df <- df[, c("City", condition)]
   score_park_data_viz <- distinct(park_data_viz, City, .keep_all = TRUE)
   arrange(score_park_data_viz, desc(`Park Score`))
   top10_score_park_data_viz <- head(score_park_data_viz, 10)
@@ -83,8 +81,6 @@ parkCityBarGraph_top10 <- function() {
 }
 
 parkCityBarGraph_bottom10 <- function() {
-  #df <- head(park_data_viz[order(-park_data_viz[condition]), ], 10)
-  #df <- df[, c("City", condition)]
   score_park_data_viz <- distinct(park_data_viz, City, .keep_all = TRUE)
   arrange(score_park_data_viz, desc(`Park Score`))
   top10_score_park_data_viz <- head(score_park_data_viz, 10)

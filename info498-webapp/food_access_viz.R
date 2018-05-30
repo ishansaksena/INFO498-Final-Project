@@ -45,8 +45,22 @@ foodAccessGraph <- function(food_distance, food_race, health_outcome) {
   health_outcome_name <- health_dictionary[[health_outcome]]
   access_name <- paste0(food_prefix, race_dictionary[[food_race]], dist_dictionary[[food_distance]], food_suffix, sep="")
   
-  plot <- ggplot(food_access_data, mapping=aes(x=food_access_data[[access_name]], y=food_access_data[[health_outcome_name]])) +
-    geom_point(size=0.5)
+  plot <- ggplot(food_access_data, aes(x = food_access_data[[access_name]], y = food_access_data[[health_outcome_name]])) + 
+    geom_point(size=0.2, col = "indianred", aes(text = paste0("Food Access: ", food_access_data[[access_name]], "<br />", "Health Outcome", food_access_data[[health_outcome_name]]))) +
+    geom_smooth(method = "lm", se = T, col = "deepskyblue3") +
+    labs(x = paste("Race: ", food_race, " Radius: ", food_distance), y = health_outcome, title = paste0(health_outcome, " for ", food_distance, " miles or more for race: ", food_race)) + 
+    theme(
+      legend.position = "none",
+      panel.background = element_rect(fill = "gray29",
+                                      colour = "gray29",
+                                      size = 0.5, linetype = "solid"),
+      panel.grid.major = element_line(size = 0.5, linetype = 'solid',
+                                      colour = "gray94"), 
+      panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
+                                      colour = "gray94")
+    )
+  
+  plot <- ggplotly(ggplotly(plot, tooltip = c("text")))
   
   return (plot)
 }

@@ -28,7 +28,7 @@ shinyServer(function(input, output) {
     bikeBarGraph(input$select_condition_bike)
   })
   
-  output$foodAccessGraph <- renderPlot({
+  output$foodAccessGraph <- renderPlotly({
     foodAccessGraph(input$select_distance, input$select_race, input$select_outcome)
   })
 })
