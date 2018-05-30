@@ -19,7 +19,7 @@ bike_data_viz <- bike_data_viz %>% filter(is.na(bike_data_viz$`Bike Score`) == F
 
 bikeviz <- function(condition) {
   plot <- ggplot(bike_data_viz, aes(x = bike_data_viz[condition], y = bike_data_viz$`Bike Score`)) + 
-    geom_point(aes(col = "indianred")) +
+    geom_point(aes(col = "indianred", text=sprintf("letter: %s<br>Letter: %s", bike_data_viz[ ,condition], bike_data_viz$`Bike Score`))) +
     geom_smooth(method = "lm", se = T, col = "deepskyblue3") +
     ylim(limits = c(30, 80)) +
     labs(x = condition, y = "Bike Score", title = paste0(condition, " VS Bike Score")) + 
