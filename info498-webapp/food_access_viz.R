@@ -3,9 +3,11 @@ library("ggplot2")
 library("knitr")
 library("plotly")
 
+# Load Data
 food_access_data = read.csv("../prepped_data/FoodAccess.csv")
 food_access_data <- food_access_data[complete.cases(food_access_data), ]
 
+# Create Dictionaries mapping from user options to dataset column names
 original_health_columns <- c("City", "Arthritis.among.adults.aged...18.Years", "Binge.drinking.among.adults.aged...18.Years", "Coronary.heart.disease.among.adults.aged...18.Years", "Current.asthma.among.adults.aged...18.Years", "Current.smoking.among.adults.aged...18.Years", "High.blood.pressure.among.adults.aged...18.Years", "High.cholesterol.among.adults.aged...18.Years.who.have.been.screened.in.the.past.5.Years", "Mental.health.not.good.for...14.days.among.adults.aged...18.Years", "Obesity.among.adults.aged...18.Years", "Physical.health.not.good.for...14.days.among.adults.aged...18.Years", "ParkScore")
 new_health_columns <- c("City", "Arthritis", "Binge Drinking", "Coronary Heart Disease", "Asthma", "Smoking", "High Blood Pressure", "High Cholesterol", "Mental Health", "Obesity", "Physical Health", "Park Score")
 
@@ -33,52 +35,18 @@ for(i in 1:7) {
   race_dictionary[[i]] <- original_race_columns[[i]]
 }
 
-# health_outcome <- "Obesity"
-health_dictionary
-# health_dictionary[[health_outcome]]
 
-dist_dictionary
-race_dictionary
-
+# Create Visualization from dynamic selection of variables
 food_prefix <- "la"
 food_suffix <- "share"
 
 foodAccessGraph <- function(food_distance, food_race, health_outcome) {
-  # print("Food Access Variable")
-  # print(food_distance)
-  # 
-  # print("Race")
-  # print(food_race)
-  # 
-  # print("health outcome")
-  # print(health_outcome)
-  # 
-  # print("Translated health outcome")
-  # print(health_dictionary[[health_outcome]])
   
   health_outcome_name <- health_dictionary[[health_outcome]]
   access_name <- paste0(food_prefix, race_dictionary[[food_race]], dist_dictionary[[food_distance]], food_suffix, sep="")
   
-  print("Health outcome name")
-  print(health_outcome_name)
-  print("Access name")
-  print(access_name)
-  
-  plot <- ggplot(food_access_data, mapping=aes(x=health_outcome_name, y=access_name)) +
+  plot <- ggplot(food_access_data, mapping=aes(x=food_access_data[[access_name]], y=food_access_data[[health_outcome_name]])) +
     geom_point(size=0.5)
-  
-  # plot <- ggplot(food_access_data, mapping=aes(x=food_access_data$Arthritis.among.adults.aged...18.Years, y=food_access_data$Obesity)) + 
-  #   geom_point(size=0.5)
-  
-  # plot <- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length,
-  #                      marker = list(size = 10,
-  #                                    color = 'rgba(255, 182, 193, .9)',
-  #                                    line = list(color = 'rgba(152, 0, 0, .8)',
-  #                                                width = 2))) %>%
-  #   layout(title = 'Styled Scatter',
-  #          yaxis = list(zeroline = FALSE),
-  #          xaxis = list(zeroline = FALSE))
-  # 
   
   return (plot)
 }

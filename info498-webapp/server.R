@@ -1,11 +1,5 @@
-#
-# This is the server logic of a Shiny web application. You can run the 
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-# 
-#    http://shiny.rstudio.com/
-#
+# Server Logic for Shiny app
+# Team Members: Ishan Saksena, Jayashree Raman, Naga Soundari Balamurugan, Zubin Chopra
 
 library(shiny)
 source("park_viz.R")
@@ -14,34 +8,27 @@ source("food_access_viz.R")
 source("introduction_viz.R")
 source("data_viz.R")
 
-# Define server logic required to draw a histogram
+
 shinyServer(function(input, output) {
-   
+  
+  # Render All Graphs
   output$parkGraph <- renderPlotly({
-    
     parkViz(input$select_condition)
-    
   })
   
   output$parkBarGraph <- renderPlotly({
-    
     parkBarGraph(input$select_condition)
-    
   })
   
   output$bikeGraph <- renderPlotly({
-
     bikeviz(input$select_condition_bike)
   })
   
   output$bikeBarGraph <- renderPlotly({
     bikeBarGraph(input$select_condition_bike)
-
   })
   
   output$foodAccessGraph <- renderPlot({
     foodAccessGraph(input$select_distance, input$select_race, input$select_outcome)
-    
   })
-  
 })

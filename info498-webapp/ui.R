@@ -1,16 +1,9 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-# 
-#    http://shiny.rstudio.com/
-#
+# User Interface for Shiny app. 
+# Team Members: Ishan Saksena, Jayashree Raman, Naga Soundari Balamurugan, Zubin Chopra
 
 library(shiny)
 library(plotly)
 
-# Define UI for application that draws a histogram
 shinyUI(fluidPage(
   
   # Application title
@@ -18,9 +11,8 @@ shinyUI(fluidPage(
   
   tabsetPanel(type = "tabs",
   
-    tabPanel("Introduction", # Add a comma here when writing code for this tab
+    tabPanel("Introduction", 
              
-             # Add content for the About Us Tab
              mainPanel(
                h3("Built Environments: Neighbourhoods"),
                h5("A built environment includes, but is not limited to access to healthy food resources, parks, transportation facilities."),
@@ -48,12 +40,10 @@ shinyUI(fluidPage(
                
                h5("Our goal is to explore the relation between neighbourhood built environments and public health through effective visualizations."),
                h5("Depending on how correlated these measures are, we could infer on how cities rank in these areas as well as set priorities for future research in this area.")
-               
-               
              )
-             
     ),
-    tabPanel("Data", # Add a comma here when writing code for this tab
+    
+    tabPanel("Data", 
              
              h2("500 Cities Health Data"),
              p(
@@ -128,7 +118,6 @@ shinyUI(fluidPage(
     
     tabPanel("Bikeability",
     
-      # Add code for bikeability viz here
       sidebarLayout(
         sidebarPanel(
           selectInput("select_condition_bike", label = h3("Select Condition"), 
@@ -158,33 +147,33 @@ shinyUI(fluidPage(
 
     ),
     
-    tabPanel("Food", # Add a comma here when writing code for this tab
+    tabPanel("Food",
              
-             # Add code for food viz here
-             sidebarLayout(
-               sidebarPanel(
-                 selectInput("select_outcome", label = h3("Select health Outcome"), 
-                             choices = list("Arthritis", "Binge Drinking", "Coronary Heart Disease", "Asthma", "Smoking", "High Blood Pressure", "High Cholestrol", "Mental Health", "Obesity", "Physical Health"), 
-                             selected = 1),
-                 
-                 selectInput("select_distance", label = h3("Select Distance to Grocery Store"), 
-                             choices = list("0.5 Mile", "1 Mile", "10 Miles", "20 Miles or More"), 
-                             selected = 1),
-                 
-                 selectInput("select_race", label = h3("Select Race"), 
-                             choices = list("White", "African American", "Asian", "Native Hawaiian / Pacific Islander ", "American Indian / Alaska Native", "Hispanic / Latino", "Other / Multiple Races"), 
-                             selected = 1)
-                 
-               ),
-               
-               mainPanel(
-                 plotOutput("foodAccessGraph")
-               ),
-               
-             )
-             
+       sidebarLayout(
+         sidebarPanel(
+           selectInput("select_outcome", label = h3("Select health Outcome"), 
+                       choices = list("Arthritis", "Binge Drinking", "Coronary Heart Disease", "Asthma", "Smoking", "High Blood Pressure", "High Cholestrol", "Mental Health", "Obesity", "Physical Health"), 
+                       selected = 1),
+           
+           selectInput("select_distance", label = h3("Select Distance to Grocery Store"), 
+                       choices = list("0.5 Mile", "1 Mile", "10 Miles", "20 Miles or More"), 
+                       selected = 1),
+           
+           selectInput("select_race", label = h3("Select Race"), 
+                       choices = list("White", "African American", "Asian", "Native Hawaiian / Pacific Islander ", "American Indian / Alaska Native", "Hispanic / Latino", "Other / Multiple Races"), 
+                       selected = 1),
+           
+           h3("Analysis"),
+           
+           p("Hello")
+           
+         ),
+         
+         mainPanel(
+           plotOutput("foodAccessGraph")
+         ),
+         
+       )
     )
-    
   )
-    
 ))
