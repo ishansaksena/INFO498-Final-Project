@@ -56,6 +56,8 @@ corval <- cor.test(walkability$Walk.Score, walkability$No.leisure.time.physical.
 corval <- cor.test(walkability$Walk.Score, walkability$Taking.medicine.for.high.blood.pressure.control.among.adults.aged...18.Years.with.high.blood.pressure) #-0.01814264  
 
 ########BikeScore
+
+
 corval <- cor.test(as.numeric(walkability$Bike.Score), walkability$Binge.drinking.among.adults.aged...18.Years) #0.3109519
 corval <- cor.test(as.numeric(walkability$Bike.Score), walkability$Current.smoking.among.adults.aged...18.Years) #-0.1924141  
 corval <- cor.test(as.numeric(walkability$Bike.Score), walkability$Mental.health.not.good.for...14.days.among.adults.aged...18.Years) #-0.03147091
