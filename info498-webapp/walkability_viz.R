@@ -35,8 +35,6 @@ bikeviz <- function(condition) {
   return (plot)
 }
 
-#p <- plot_ly(bike_data_viz, x = bike_data_viz$Arthritis, y=bike_data_viz$`Bike Score`, type = "bar")
-
 
 bikeBarGraph <- function(condition) {
   print(condition)
