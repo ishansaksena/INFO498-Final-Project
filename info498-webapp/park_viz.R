@@ -12,6 +12,9 @@ park_data_viz <- park_data[, cols]
 colnames(park_data_viz) <- c("City", "Arthritis", "Binge Drinking", "Coronary Heart Disease", "Asthma", "Smoking", "High Blood Pressure", "High Cholesterol", "Mental Health", "Obesity", "Physical Health", "Park Score")
 
 parkViz <- function(condition) {
+  
+  mytext=paste("Park Score = ", park_data_viz$`Park Score`, "\n", "City: ", park_data_viz$City,  sep="")    
+  
   plot <- ggplot(park_data_viz, aes(x = park_data_viz[condition], y = park_data_viz$`Park Score`)) + 
     geom_point(aes(col = "indianred")) +
     geom_smooth(method = "lm", se = T, col = "deepskyblue3") +
@@ -26,6 +29,9 @@ parkViz <- function(condition) {
       panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
                                       colour = "gray94")
     )
+  
+  plot <- ggplotly(plot)
+  
   return (plot)
 }
 
@@ -45,5 +51,9 @@ parkBarGraph <- function(condition) {
       panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
                                       colour = "gray94")
     )
+  
+  plot <- ggplotly(plot)
+  style(plot, hoverinfo = "none")
+  
   return (plot)
 }

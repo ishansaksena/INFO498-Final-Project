@@ -19,7 +19,7 @@ bike_data_viz <- bike_data_viz %>% filter(is.na(bike_data_viz$`Bike Score`) == F
 
 bikeviz <- function(condition) {
   plot <- ggplot(bike_data_viz, aes(x = bike_data_viz[condition], y = bike_data_viz$`Bike Score`)) + 
-    geom_point(aes(col = "indianred")) +
+    geom_point(col = "indianred", aes(text=sprintf("letter: %s<br>Bike Score: %s", bike_data_viz[ ,condition], bike_data_viz$`Bike Score`))) +
     geom_smooth(method = "lm", se = T, col = "deepskyblue3") +
     ylim(limits = c(30, 80)) +
     labs(x = condition, y = "Bike Score", title = paste0(condition, " VS Bike Score")) + 
@@ -32,10 +32,14 @@ bikeviz <- function(condition) {
                                       colour = "gray94")
 
     )
+  #ggply$x$data[[1]]$hoverinfo <- "none"
+  plot$x$hoverinfo <- "none"
   return (plot)
 }
 
+
 bikeBarGraph <- function(condition) {
+  print(condition)
   df <- head(bike_data_viz[order(-bike_data_viz[condition]), ], 10)
   df <- df[, c("City", condition)]
   plot <- ggplot(df, aes(x = City, y = df[condition])) +
@@ -51,6 +55,6 @@ bikeBarGraph <- function(condition) {
       panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
                                       colour = "gray94")
     )
-  return (plot)
+  return(plot)
 }
 
