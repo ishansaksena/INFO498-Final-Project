@@ -14,6 +14,9 @@ shinyUI(fluidPage(
     tabPanel("Introduction", 
              
              mainPanel(
+               
+               em("Team Members: Ishan Saksena, Jayashree Raman, Naga Soundari Balamurugan, Zubin Chopra"),
+               
                h3("Built Environments: Neighbourhoods"),
                h5("A built environment includes, but is not limited to access to healthy food resources, parks, transportation facilities."),
                h5("For our analysis, we explored three main types of Built Environments and their effect on Public Health"),
@@ -22,6 +25,8 @@ shinyUI(fluidPage(
                  tags$li("Transportation"), 
                  tags$li("Food Access")
                ),
+               
+               
                h5("We used aggregated scores for each of these built environments for different cities in the United States and correlated it with the physical and mental heath outcomes for those cities"),
                
                h3("Significance"),
