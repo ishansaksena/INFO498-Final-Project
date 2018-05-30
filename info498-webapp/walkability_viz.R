@@ -20,11 +20,7 @@ bike_data_viz <- bike_data_viz %>% filter(is.na(bike_data_viz$`Bike Score`) == F
 
 bikeviz <- function(condition) {
   plot <- ggplot(bike_data_viz, aes(x = bike_data_viz[condition], y = bike_data_viz$`Bike Score`)) + 
-<<<<<<< HEAD
-    geom_point(col = "indianred", aes(text=paste("letter", bike_data_viz[ ,condition], "Bike Score", bike_data_viz$`Bike Score`))) +
-=======
-    geom_point(col = "indianred", aes(text = paste0("City: ", bike_data_viz$City, "<br />", "Bike Score: ", bike_data_viz$`Bike Score`))) +
->>>>>>> 3ad79787d950f81aa3abb1d9f763182947626340
+    geom_point(col = "purple4", aes(text = paste0("City: ", bike_data_viz$City, "<br />", "Bike Score: ", bike_data_viz$`Bike Score`))) +
     geom_smooth(method = "lm", se = T, col = "deepskyblue3") +
     ylim(limits = c(30, 80)) +
     labs(x = condition, y = "Bike Score", title = paste0(condition, " VS Bike Score")) + 
@@ -37,34 +33,25 @@ bikeviz <- function(condition) {
                                       colour = "gray94")
 
     )
-<<<<<<< HEAD
-  return (plot)
-}
 
-
-=======
-  
-  
   return (ggplotly(plot, tooltip = c("text")))
 }
 
->>>>>>> 3ad79787d950f81aa3abb1d9f763182947626340
 
 bikeBarGraph <- function(condition) {
   df <- head(bike_data_viz[order(-bike_data_viz[condition]), ], 10)
   df <- df[, c("City", "Bike Score", condition)]
   plot <- ggplot(df, aes(x = City, y = df[condition])) +
-    geom_bar(stat = "identity", width = .5, fill = "lightcoral", aes(text = paste0("Disease: ", df[ ,condition], "%", "<br>", "Bike Score: ", df$`Bike Score`))) + 
+    geom_bar(stat = "identity", width = .5, fill = "purple2", aes(text = paste0("Disease: ", df[ ,condition], "%", "<br>", "Bike Score: ", df$`Bike Score`))) + 
     labs(x = "City", y = paste0(condition, "(%)"), title = paste0("Top 10 Cities with Highest Levels of ", condition)) +
     theme(
       legend.position = "none",
-      panel.background = element_rect(fill = "gray29",
-                                      colour = "gray29",
-                                      size = 0.5, linetype = "solid"),
+      panel.background = element_rect(size = 0.5, linetype = "solid"),
       panel.grid.major = element_line(size = 0.5, linetype = 'solid',
                                       colour = "gray94"), 
       panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
-                                      colour = "gray94")
+                                      colour = "gray94"),
+      axis.text.x = element_text(angle = 90, hjust = 1)
     )
   return(ggplotly(plot, tooltip = c("text")))
 }

@@ -9,7 +9,7 @@ park_data <- park_data[unique(park_data$City), ]
 park_data <- park_data[order(-park_data$ParkScore), ]
 cols <- c("City", "Arthritis.among.adults.aged...18.Years", "Binge.drinking.among.adults.aged...18.Years", "Coronary.heart.disease.among.adults.aged...18.Years", "Current.asthma.among.adults.aged...18.Years", "Current.smoking.among.adults.aged...18.Years", "High.blood.pressure.among.adults.aged...18.Years", "High.cholesterol.among.adults.aged...18.Years.who.have.been.screened.in.the.past.5.Years", "Mental.health.not.good.for...14.days.among.adults.aged...18.Years", "Obesity.among.adults.aged...18.Years", "Physical.health.not.good.for...14.days.among.adults.aged...18.Years", "ParkScore")
 park_data_viz <- park_data[, cols]
-colnames(park_data_viz) <- c("City", "Arthritis", "Binge Drinking", "Coronary Heart Disease", "Asthma", "Smoking", "High Blood Pressure", "High Cholesterol", "Mental Health", "Obesity", "Physical Health", "Park Score")
+colnames(park_data_viz) <- c("City", "Arthritis", "Binge Drinking", "Coronary Heart Disease", "Asthma", "Smoking", "High Blood Pressure", "High Cholestrol", "Mental Health", "Obesity", "Physical Health", "Park Score")
 
 parkViz <- function(condition) {
   
@@ -49,7 +49,8 @@ parkBarGraph <- function(condition) {
       panel.grid.major = element_line(size = 0.5, linetype = 'solid',
                                       colour = "gray94"), 
       panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
-                                      colour = "gray94")
+                                      colour = "gray94"),
+      axis.text.x = element_text(angle = 90, hjust = 1)
     )
   
   plot <- ggplotly(ggplotly(plot, tooltip = c("text")))
@@ -71,7 +72,8 @@ parkCityBarGraph_top10 <- function() {
       panel.grid.major = element_line(size = 0.5, linetype = 'solid',
                                       colour = "gray94"), 
       panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
-                                      colour = "gray94")
+                                      colour = "gray94"),
+      axis.text.x = element_text(angle = 90, hjust = 1)
     )
   
   plot <- ggplotly(plot)
