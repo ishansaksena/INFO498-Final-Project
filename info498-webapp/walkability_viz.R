@@ -17,9 +17,10 @@ colnames(bike_data_viz) <- c("City", "Arthritis", "Binge Drinking", "Coronary He
 bike_data_viz$`Bike Score` = as.numeric(levels(bike_data_viz$`Bike Score`))[bike_data_viz$`Bike Score`]
 bike_data_viz <- bike_data_viz %>% filter(is.na(bike_data_viz$`Bike Score`) == F)
 
+
 bikeviz <- function(condition) {
   plot <- ggplot(bike_data_viz, aes(x = bike_data_viz[condition], y = bike_data_viz$`Bike Score`)) + 
-    geom_point(col = "indianred", aes(text=sprintf("letter: %s<br>Bike Score: %s", bike_data_viz[ ,condition], bike_data_viz$`Bike Score`))) +
+    geom_point(col = "indianred", aes(text=paste("letter", bike_data_viz[ ,condition], "Bike Score", bike_data_viz$`Bike Score`))) +
     geom_smooth(method = "lm", se = T, col = "deepskyblue3") +
     ylim(limits = c(30, 80)) +
     labs(x = condition, y = "Bike Score", title = paste0(condition, " VS Bike Score")) + 
@@ -32,16 +33,12 @@ bikeviz <- function(condition) {
                                       colour = "gray94")
 
     )
-  #ggply$x$data[[1]]$hoverinfo <- "none"
-  plot$x$hoverinfo <- "none"
   return (plot)
 }
 
-#p <- plot_ly(bike_data_viz, x = bike_data_viz$Arthritis, y=bike_data_viz$`Bike Score`, type = "bar")
 
 
 bikeBarGraph <- function(condition) {
-  print(condition)
   df <- head(bike_data_viz[order(-bike_data_viz[condition]), ], 10)
   df <- df[, c("City", condition)]
   plot <- ggplot(df, aes(x = City, y = df[condition])) +
