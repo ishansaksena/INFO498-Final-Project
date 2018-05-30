@@ -39,5 +39,9 @@ shinyServer(function(input, output) {
 
   })
   
- 
+  output$foodAccessGraph <- renderPlot({
+    foodAccessGraph(input$select_distance, input$select_race, input$select_outcome)
+    
+  })
+  
 })

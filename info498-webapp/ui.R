@@ -158,9 +158,30 @@ shinyUI(fluidPage(
 
     ),
     
-    tabPanel("Food" # Add a comma here when writing code for this tab
-      
-      # Add code for food viz here
+    tabPanel("Food", # Add a comma here when writing code for this tab
+             
+             # Add code for food viz here
+             sidebarLayout(
+               sidebarPanel(
+                 selectInput("select_outcome", label = h3("Select health Outcome"), 
+                             choices = list("Arthritis", "Binge Drinking", "Coronary Heart Disease", "Asthma", "Smoking", "High Blood Pressure", "High Cholestrol", "Mental Health", "Obesity", "Physical Health"), 
+                             selected = 1),
+                 
+                 selectInput("select_distance", label = h3("Select Distance to Grocery Store"), 
+                             choices = list("0.5 Mile", "1 Mile", "10 Miles", "20 Miles or More"), 
+                             selected = 1),
+                 
+                 selectInput("select_race", label = h3("Select Race"), 
+                             choices = list("White", "African American", "Asian", "Native Hawaiian / Pacific Islander ", "American Indian / Alaska Native", "Hispanic / Latino", "Other / Multiple Races"), 
+                             selected = 1)
+                 
+               ),
+               
+               mainPanel(
+                 plotOutput("foodAccessGraph")
+               ),
+               
+             )
              
     )
     
