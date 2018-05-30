@@ -34,8 +34,9 @@ shinyUI(fluidPage(
         
         h3("Significance"),
         h5("With most of the population migrating towards urban areas, we feel that planning and building a sustainable urban environment is very critical and essential"),
-        h5("By analyzing the effect of different built environments and their effect on general public health, we wanted to emphasize what factors must be kept in mind while planning urban infrastructure."),
-        
+        h5("Primarily, there is a growing interest in designing cities that support and help its residents live healthy lives."),
+        h5("By analyzing the effect of different built environments and their effect on general public health, we want to emphasize what factors must be kept in mind while planning urban infrastructure."),
+        h5("We also try to do a comparative study between cities to explore how they rank in terms of different built environment infrastructure."),
         
         h3("Target Audience"),
         tags$ul(
@@ -121,7 +122,10 @@ shinyUI(fluidPage(
         
         mainPanel(
            plotOutput("parkGraph"),
-           plotOutput("parkBarGraph")
+           plotOutput("parkBarGraph"),
+           plotOutput("parkCityBarGraph_top10"),
+           plotOutput("parkCityBarGraph_bottom10")
+           
         )
       )
     ),
