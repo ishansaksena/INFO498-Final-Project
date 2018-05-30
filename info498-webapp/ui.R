@@ -117,8 +117,8 @@ shinyUI(fluidPage(
         ),
         
         mainPanel(
-          plotOutput("bikeGraph"),
-          plotOutput("bikeBarGraph")
+          plotlyOutput("bikeGraph"),
+          plotlyOutput("bikeBarGraph")
         )
       )
 

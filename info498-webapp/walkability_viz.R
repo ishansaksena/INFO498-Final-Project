@@ -35,7 +35,11 @@ bikeviz <- function(condition) {
   return (plot)
 }
 
+#p <- plot_ly(bike_data_viz, x = bike_data_viz$Arthritis, y=bike_data_viz$`Bike Score`, type = "bar")
+
+
 bikeBarGraph <- function(condition) {
+  print(condition)
   df <- head(bike_data_viz[order(-bike_data_viz[condition]), ], 10)
   df <- df[, c("City", condition)]
   plot <- ggplot(df, aes(x = City, y = df[condition])) +
@@ -51,6 +55,6 @@ bikeBarGraph <- function(condition) {
       panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
                                       colour = "gray94")
     )
-  return (plot)
+  return(plot)
 }
 

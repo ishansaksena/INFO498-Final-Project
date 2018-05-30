@@ -29,12 +29,12 @@ shinyServer(function(input, output) {
     
   })
   
-  output$bikeGraph <- renderPlot({
+  output$bikeGraph <- renderPlotly({
 
     bikeviz(input$select_condition_bike)
   })
   
-  output$bikeBarGraph <- renderPlot({
+  output$bikeBarGraph <- renderPlotly({
     bikeBarGraph(input$select_condition_bike)
 
   })
