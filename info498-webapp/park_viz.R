@@ -56,3 +56,54 @@ parkBarGraph <- function(condition) {
   
   return (plot)
 }
+
+parkCityBarGraph_top10 <- function() {
+  #df <- head(park_data_viz[order(-park_data_viz[condition]), ], 10)
+  #df <- df[, c("City", condition)]
+  score_park_data_viz <- distinct(park_data_viz, City, .keep_all = TRUE)
+  arrange(score_park_data_viz, desc(`Park Score`))
+  top10_score_park_data_viz <- head(score_park_data_viz, 10)
+  bottom10_score_park_data_viz <- tail(score_park_data_viz, 10)
+  plot <- ggplot(top10_score_park_data_viz, aes(x = City, y = `Park Score`)) +
+    geom_bar(stat = "identity", width = .5, fill = "darkorchid3") + 
+    labs(x = "City", y = "Park Score", title = "Cities vs Park Scores") +
+    theme(
+      legend.position = "none",
+      panel.background = element_rect(size = 0.5, linetype = "solid"),
+      panel.grid.major = element_line(size = 0.5, linetype = 'solid',
+                                      colour = "gray94"), 
+      panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
+                                      colour = "gray94")
+    )
+  
+  plot <- ggplotly(plot)
+  style(plot, hoverinfo = "none")
+  
+  return (plot)
+}
+
+parkCityBarGraph_bottom10 <- function() {
+  #df <- head(park_data_viz[order(-park_data_viz[condition]), ], 10)
+  #df <- df[, c("City", condition)]
+  score_park_data_viz <- distinct(park_data_viz, City, .keep_all = TRUE)
+  arrange(score_park_data_viz, desc(`Park Score`))
+  top10_score_park_data_viz <- head(score_park_data_viz, 10)
+  bottom10_score_park_data_viz <- tail(score_park_data_viz, 10)
+  plot <- ggplot(bottom10_score_park_data_viz, aes(x = City, y = `Park Score`)) +
+    geom_bar(stat = "identity", width = .5, fill = "darkorchid3") + 
+    labs(x = "City", y = "Park Score", title = "Cities vs Park Scores") +
+    theme(
+      legend.position = "none",
+      panel.background = element_rect(size = 0.5, linetype = "solid"),
+      panel.grid.major = element_line(size = 0.5, linetype = 'solid',
+                                      colour = "gray94"), 
+      panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
+                                      colour = "gray94")
+    )
+  
+  plot <- ggplotly(plot)
+  style(plot, hoverinfo = "none")
+  
+  return (plot)
+}
+
